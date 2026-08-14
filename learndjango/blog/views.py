@@ -24,3 +24,23 @@ def greet_user(request):
     else:
         message = "Good Evening"
     return HttpResponse(f"<h1>{message}</h1>")
+
+
+# HTTP REQUESTS:
+def request_info(request):
+    method = request.method     # 'GET', 'POST', etc.
+    path = request.path         # '/blog/time/'
+    get_params = request.GET    # query string params (?key=value)
+    post_data = request.POST    # form data (only on POST)
+    headers = request.headers   # request headers
+
+    user_agent = request.META.get('HTTP_USER_AGENT')
+
+    html = f"""
+        <h2>Request Info</h2>
+        <p>Method: {method}</p>
+        <p>Path: {path}</p>
+        <p>GET params: {dict(get_params)}</p>
+    """
+    return HttpResponse(html)
+
