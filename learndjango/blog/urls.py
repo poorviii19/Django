@@ -9,4 +9,5 @@ urlpatterns = [
     path('info/', views.request_info, name='request_info'),
     path('greet/<int:name>/', views.greet),
     path('movieFinder/<str:movie>/', views.movieFinder),
+    path('recipe/', views.recipe, name='recipe'),
 ]

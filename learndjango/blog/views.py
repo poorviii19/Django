@@ -59,3 +59,11 @@ def movieFinder(request, movie):
         message = f'Sorry ☹️, {movie.title()} was not found.'
 
     return HttpResponse(f'<h1>{message}</h1>')
+
+def recipe(request):
+    food = request.GET.get("food", "")
+    if food:
+        message = f"Recipe available for food = {food}"
+    else:
+        message = "Please enter a food name."
+    return HttpResponse(message)
