@@ -7,4 +7,6 @@ urlpatterns = [
     path('time/', views.current_time, name = 'current_time'),
     path('greet/',views.greet_user, name = 'greet_user' ),
     path('info/', views.request_info, name='request_info'),
+    path('greet/<int:name>/', views.greet),
+    path('movieFinder/<str:movie>/', views.movieFinder),
 ]

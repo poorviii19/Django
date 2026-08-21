@@ -44,3 +44,18 @@ def request_info(request):
     """
     return HttpResponse(html)
 
+def greet(request,name):
+    return HttpResponse(f"the name is {name}")
+
+def movieFinder(request, movie):
+    
+    movies = ['kgf', 'rrr', 'bahubali']
+
+    if not movies:
+        message = 'Please enter a movie name.'
+    elif movie in movies:
+        message = f'{movie.upper()} is available to watch.'
+    else:
+        message = f'Sorry ☹️, {movie.title()} was not found.'
+
+    return HttpResponse(f'<h1>{message}</h1>')
