@@ -67,3 +67,8 @@ def recipe(request):
     else:
         message = "Please enter a food name."
     return HttpResponse(message)
+
+
+# Regular expression:
+def userProfile(request, username):
+    return HttpResponse(f"user profile is: {username}")
