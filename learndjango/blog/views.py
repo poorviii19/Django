@@ -76,3 +76,9 @@ def userProfile(request, username):
 
 def productId(request, prod):
     return HttpResponse(f"product id is: {prod}")
+
+
+
+# define its url in myproject
+def handler404(request, exception):
+    return HttpResponse(f"<h1>dear user the source you requested for is not found. {exception}</h1>")
