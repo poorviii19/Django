@@ -72,3 +72,7 @@ def recipe(request):
 # Regular expression:
 def userProfile(request, username):
     return HttpResponse(f"user profile is: {username}")
+
+
+def productId(request, prod):
+    return HttpResponse(f"product id is: {prod}")

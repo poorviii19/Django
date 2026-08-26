@@ -12,4 +12,5 @@ urlpatterns = [
     path('recipe/', views.recipe, name='recipe'),
     # re_path(r'^user/(?P<username>[a-zA-Z]+)/$' ,views.userProfile),
     re_path(r'^user/(?P<username>[a-zA-Z]*)/?$' ,views.userProfile),
+    re_path(r'^product/(?P<prod>[a-zA-Z0-9]+)/$' ,views.productId),
 ]
