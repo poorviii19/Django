@@ -82,3 +82,8 @@ def productId(request, prod):
 # define its url in myproject
 def handler404(request, exception):
     return HttpResponse(f"<h1>dear user the source you requested for is not found. {exception}</h1>")
+
+def home(request):
+    return render(request, 'blog/home.html')
+
+# render() is a shortcut that combines: loading the template + filling in context data + returning an HttpResponse — all in one line.
