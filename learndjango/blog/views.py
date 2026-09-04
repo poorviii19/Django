@@ -3,12 +3,12 @@ from django.http import HttpResponse
 import datetime
 
 # Create your views here.
-def home(request):
-    return HttpResponse("<h1> Welcome to my Blog!</h1>")
+# def home(request):
+#     return HttpResponse("<h1> Welcome to my Blog!</h1>")
 
 
-def about(request):
-    return HttpResponse("<h1> About Us:<h1> <p> This is django's blog</p>")
+# def about(request):
+#     return HttpResponse("<h1> About Us:<h1> <p> This is django's blog</p>")
 
 def current_time(request):
     now = datetime.datetime.now()
@@ -87,3 +87,5 @@ def home(request):
     return render(request, 'blog/home.html')
 
 # render() is a shortcut that combines: loading the template + filling in context data + returning an HttpResponse — all in one line.
+def about(request):
+    return render(request, 'blog/about.html')
