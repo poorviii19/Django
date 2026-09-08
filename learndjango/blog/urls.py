@@ -12,7 +12,8 @@ urlpatterns = [
     path('movieFinder/<str:movie>/', views.movieFinder),
     path('recipe/', views.recipe, name='recipe'),
     path('res/', views.request_response, name='request_response'),
-
+    path('json/', views.json_response, name='json_response'),
+    
 
 
     re_path(r'^user/(?P<username>[a-zA-Z]+)/$' ,views.userProfile),

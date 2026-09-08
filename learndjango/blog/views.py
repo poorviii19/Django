@@ -94,3 +94,8 @@ def about(request):
 # Creating request and response:
 def request_response(request):
     return HttpResponse("Learn the basics of http response with me")
+
+
+def json_response(request):
+    data = {"name" : "Poorvi", "age" : "21", "city" : "phagwara"}
+    return JsonResponse(data)
