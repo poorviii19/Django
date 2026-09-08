@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import (HttpResponse, HttpResponseRedirect, HttpResponseNotFound, JsonResponse)
 import datetime
 
 # Create your views here.
@@ -89,3 +89,8 @@ def home(request):
 # render() is a shortcut that combines: loading the template + filling in context data + returning an HttpResponse — all in one line.
 def about(request):
     return render(request, 'blog/about.html')
+
+
+# Creating request and response:
+def request_response(request):
+    return HttpResponse("Learn the basics of http response with me")
