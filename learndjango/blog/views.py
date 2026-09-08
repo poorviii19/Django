@@ -92,20 +92,25 @@ def about(request):
 
 
 # Creating request and response:
+# Basic text/HTML response
 def request_response(request):
     return HttpResponse("Learn the basics of http response with me")
 
 
+# JSON response — very common for APIs
 def json_response(request):
     data = {"name" : "Poorvi", "age" : "21", "city" : "phagwara"}
     return JsonResponse(data)
 
+# Redirect response
 def redirect_res(request):
     return HttpResponseRedirect('/blog/about/')
 
+# Custom status code
 def custom_res(request):
     return HttpResponse("Server is a teapot", status=418)
 
 # shortcut of HttpResponseRedirect:
+# This is preferred because if you ever change the URL path in urls.py, your redirect still works (since it references the name, not the literal string).
 def redirecting(request):
     return redirect('home')
