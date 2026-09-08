@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import (HttpResponse, HttpResponseRedirect, HttpResponseNotFound, JsonResponse)
+from django.http import (HttpResponse, HttpResponseRedirect, JsonResponse)
 import datetime
 
 # Create your views here.
@@ -102,3 +102,6 @@ def json_response(request):
 
 def redirect_res(request):
     return HttpResponseRedirect('/blog/about/')
+
+def custom_res(request):
+    return HttpResponse("Server is a teapot", status=418)

@@ -14,6 +14,7 @@ urlpatterns = [
     path('res/', views.request_response, name='request_response'),
     path('json/', views.json_response, name='json_response'),
     path('red/', views.redirect_res, name='redirect_res'),
+    path('status/', views.custom_res, name='custom_res'),
 
 
 
