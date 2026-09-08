@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import (HttpResponse, HttpResponseRedirect, JsonResponse)
 import datetime
 
@@ -105,3 +105,7 @@ def redirect_res(request):
 
 def custom_res(request):
     return HttpResponse("Server is a teapot", status=418)
+
+# shortcut of HttpResponseRedirect:
+def redirecting(request):
+    return redirect('home')
