@@ -99,3 +99,6 @@ def request_response(request):
 def json_response(request):
     data = {"name" : "Poorvi", "age" : "21", "city" : "phagwara"}
     return JsonResponse(data)
+
+def redirect_res(request):
+    return HttpResponseRedirect('/blog/about/')
