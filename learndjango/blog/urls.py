@@ -25,4 +25,9 @@ urlpatterns = [
     re_path(r'^user/(?P<username>[a-zA-Z]+)/$' ,views.userProfile),
     re_path(r'^user/(?P<username>[a-zA-Z]*)/?$' ,views.userProfile),
     re_path(r'^product/(?P<prod>[a-zA-Z0-9]+)/$' ,views.productId),
+
+    path('welcome/', views.welcome, name='welcome'),
+    path('postdetails/<int:post_id>/', views.post_details, name='post_details'),
+    path('api/data/', views.api_data, name='api_data'),
+    path('old/', views.old_home_redirect, name='old_redirect'),
 ]

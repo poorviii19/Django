@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.http import (HttpResponse, HttpResponseRedirect, JsonResponse)
+from django.http import (HttpResponse, HttpResponseRedirect, JsonResponse,  Http404)
 import datetime
 
 # Create your views here.
@@ -126,3 +126,20 @@ def post_by_slug(request, slug):
 
 def user_profile(request, username, year):
     return HttpResponse(f"<h1>{username}'s activity in {year}</h1>")
+
+
+# practice:
+def welcome(request):
+    return HttpResponse("<h1>Blog Welcome page</h1>")
+
+def post_details(request, post_id):
+    posts = {1: "Intro to Django", 2: "Views and URLs"}
+    if post_id not in posts:
+        raise Http404("Post not found")
+    return HttpResponse(f"<h1>{posts[post_id]}</h1>")
+
+def api_data(request):
+    return JsonResponse({"status": "ok", "framework": "Django"})
+
+def old_home_redirect(request):
+    return redirect('welcome')
