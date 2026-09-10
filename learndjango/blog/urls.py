@@ -16,6 +16,9 @@ urlpatterns = [
     path('red/', views.redirect_res, name='redirect_res'),
     path('status/', views.custom_res, name='custom_res'),
     path('redirect/', views.redirecting, name='redirecting'),
+    path('post/<int:post_id>/', views.post_detail, name='post_detail'),
+    path('post/<slug:slug>/', views.post_by_slug, name='post_by_slug'),
+    path('user/<str:username>/<int:year>/', views.user_profile, name='user_profile'),
 
 
 

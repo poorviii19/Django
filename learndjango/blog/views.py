@@ -114,3 +114,15 @@ def custom_res(request):
 # This is preferred because if you ever change the URL path in urls.py, your redirect still works (since it references the name, not the literal string).
 def redirecting(request):
     return redirect('home')
+
+# Mapping URLs with Params
+# You can capture parts of a URL as parameters using path converters.
+
+def post_detail(request, post_id):
+    return HttpResponse(f"<h1>Showing post #{post_id}</h1>")
+
+def post_by_slug(request, slug):
+    return HttpResponse(f"<h1>Post slug: {slug}</h1>")
+
+def user_profile(request, username, year):
+    return HttpResponse(f"<h1>{username}'s activity in {year}</h1>")
